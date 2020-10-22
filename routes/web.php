@@ -15,6 +15,8 @@ Route::get('/','HomeController@index')->middleware("auth");
 
 Auth::routes();
 
+Route::get('/profile', 'ProfileController@index')->middleware("auth");
+
 Route::get('/dashboard',function () {
     return view('welcome');
 })->name('dashboard')->middleware("auth");

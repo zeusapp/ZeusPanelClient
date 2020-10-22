@@ -16,9 +16,10 @@
         <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="{{asset("assets/img/8.png")}}" style="max-width: 80%;min-width: 75%;"></a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link active pt-2" href="/dashboard"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
-                <li class="nav-item"><a class="nav-link active pt-0" href="/"><i class="fas fa-binoculars"></i><span>&nbsp;Overview</span></a></li>
-                <li class="nav-item"><a class="nav-link active pt-0" href="/profile"><i class="fas fa-user-edit"></i><span>&nbsp;Profile</span></a></li>
+                <li class="nav-item"><a class="nav-link pt-2" href="/dashboard"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                <li class="nav-item"><a class="nav-link pt-0" href="/"><i class="fas fa-binoculars"></i><span>&nbsp;Overview</span></a></li>
+                <li class="nav-item"><a class="nav-link pt-0" href="/profile"><i class="fas fa-user-edit"></i><span>&nbsp;Profile</span></a></li>
+                <li class="nav-item"><a class="nav-link pt-0" href="/servers"><i class="fas fa-server"></i><span>&nbsp;Servers</span></a></li>
                 <hr class="sidebar-divider">
                 <div class="sidebar-heading">
                     <p class="mb-0">INTERFACE</p>
