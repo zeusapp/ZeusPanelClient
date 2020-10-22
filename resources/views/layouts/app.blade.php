@@ -16,7 +16,9 @@
         <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="{{asset("assets/img/8.png")}}" style="max-width: 80%;min-width: 75%;"></a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                <li class="nav-item"><a class="nav-link active pt-2" href="/dashboard"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                <li class="nav-item"><a class="nav-link active pt-0" href="/"><i class="fas fa-binoculars"></i><span>&nbsp;Overview</span></a></li>
+                <li class="nav-item"><a class="nav-link active pt-0" href="/profile"><i class="fas fa-user-edit"></i><span>&nbsp;Profile</span></a></li>
                 <hr class="sidebar-divider">
                 <div class="sidebar-heading">
                     <p class="mb-0">INTERFACE</p>
@@ -71,7 +73,7 @@
                 <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                     <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button" style="max-height: auto;"><i class="fas fa-search"></i></button></div>
+                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button" style=""><i class="fas fa-search"></i></button></div>
                         </div>
                     </form>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">

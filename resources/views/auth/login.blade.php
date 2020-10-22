@@ -38,26 +38,21 @@
                                 <div class="text-center">
                                     <h4 class="text-light mb-4">Welcome Back!</h4>
                                 </div>
+                                @if($errors->count() > 0)
+                                    @foreach ($errors->all() as $error)
+                                        <div class="alert alert-danger">{{ $error }}</div>
+                                    @endforeach
+                                @endif
                                 <form method="POST" action="{{ route('login') }}" class="user">
                                     @csrf
                                     <div class="form-group"><input
-                                            class="form-control form-control-user @error('email') is-invalid @enderror"
-                                            type="email" id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address..." name="email"></div>
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                            class="form-control form-control-user @error('username') is-invalid @enderror"
+                                            type="text" id="username" aria-describedby="username"
+                                            placeholder="Username" name="login"></div>
                                     <div class="form-group"><input
                                             class="form-control form-control-user @error('password') is-invalid @enderror"
-                                            type="password" id="exampleInputPassword" placeholder="Password"
+                                            type="password" id="password" placeholder="Password"
                                             name="password"></div>
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <div class="form-check">
@@ -79,7 +74,7 @@
                                                                 href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                                     </div>
                                 @endif
-                                <div class="text-center"><a class="small" href="register.html">Create an Account!</a>
+                                <div class="text-center"><a class="small" href="{{ route('register') }}">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

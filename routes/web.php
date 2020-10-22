@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware("auth");
+Route::get('/','HomeController@index')->middleware("auth");
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard')->middleware("auth");
+Route::get('/dashboard',function () {
+    return view('welcome');
+})->name('dashboard')->middleware("auth");
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->middleware("auth");
