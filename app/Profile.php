@@ -14,4 +14,6 @@ class Profile extends Model
         $this->belongsTo('App\User');
     }
 
+    //TODO: FINISH PROFILES!!!!!
+
 }

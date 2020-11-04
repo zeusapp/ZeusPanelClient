@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use PHPUnit\Framework\MockObject\Verifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -39,5 +40,10 @@ class User extends Authenticatable
 
     public function profile() {
         return $this->hasOne('App\Profile');
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new App\Notifications\EmailVerification);
     }
 }

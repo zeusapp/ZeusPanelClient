@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="{{asset("assets/bootstrap/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <style>
+        .colitem {
+            color: #a9a9a9 !important;
+        }
+
+        .colitem:hover {
+            color: white !important;
+            background-color: rgba(0,0,0,0) !important;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -27,43 +37,12 @@
                 <li class="nav-item">
                     <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Components</span></a>
                         <div class="collapse" id="collapse-1">
-                            <div class="bg-white border rounded py-2 collapse-inner">
-                                <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="collapse-item" href="buttons.html">Buttons</a><a class="collapse-item" href="cards.html">Cards</a></div>
+                            <div class="text-light py-2 collapse-inner" style="background-color: #262626">
+                                <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="colitem collapse-item" href="buttons.html">Buttons</a><a class="colitem collapse-item" href="cards.html">Cards</a></div>
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Utilities</span></a>
-                        <div class="collapse" id="collapse-2">
-                            <div class="bg-white border rounded py-2 collapse-inner">
-                                <h6 class="collapse-header">CUSTOM UTILITIES:</h6><a class="collapse-item" href="utilities-color.html">Colors</a><a class="collapse-item" href="utilities-border.html">Borders</a><a class="collapse-item" href="utilities-animation.html">Animations</a>
-                                <a
-                                    class="collapse-item" href="utilities-other.html">Other</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <hr class="sidebar-divider">
-                <div class="sidebar-heading">
-                    <p class="mb-0">Addons</p>
-                </div>
-                <li class="nav-item">
-                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button"><i class="fas fa-folder"></i>&nbsp;<span>Pages</span></a>
-                        <div class="collapse" id="collapse-3">
-                            <div class="bg-white border rounded py-2 collapse-inner">
-                                <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="login.html">Login</a><a class="collapse-item" href="register.html">Register</a><a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                                <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="404.html">404 Page</a><a class="collapse-item" href="blank.html">Blank Page</a></div>
-                        </div>
-                    </div>
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" aria-controls="collapsePages">
-                        <div class="bg-white border rounded py-2 collapse-inner">
-                            <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="#">Login</a><a class="collapse-item" href="#">Register</a><a class="collapse-item" href="#">Forgot Password</a>
-                            <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="#">404 Page</a><a class="collapse-item" href="#">Blank Page</a></div>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="charts.html"><i class="fas fa-chart-area"></i><span>&nbsp;Charts</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="tables.html"><i class="fas fa-table"></i><span>&nbsp;Tables</span></a></li>
-                <hr class="sidebar-divider">
+
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
         </div>
@@ -183,6 +162,7 @@
             </div>
         </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+@yield('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>

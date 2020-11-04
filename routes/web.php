@@ -13,7 +13,7 @@
 
 Route::get('/','HomeController@index')->middleware("auth");
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/profile', 'ProfileController@index')->middleware("auth");
 
@@ -21,3 +21,4 @@ Route::get('/dashboard',function () {
     return view('welcome');
 })->name('dashboard')->middleware("auth");
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->middleware("auth");
+Route::resource('/admin/daemons', 'DaemonsController');
