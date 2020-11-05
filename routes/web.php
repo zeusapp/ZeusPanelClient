@@ -15,7 +15,9 @@ Route::get('/','HomeController@index')->middleware("auth");
 
 Auth::routes(['verify' => true]);
 
-Route::get('/profile', 'ProfileController@index')->middleware("auth");
+Route::resource('/profile', 'ProfileController', [
+    'only' => ['index', 'create', 'update']
+])->middleware("auth");
 
 Route::get('/dashboard',function () {
     return view('welcome');

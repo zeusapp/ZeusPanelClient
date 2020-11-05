@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    private $table = "profiles";
+    protected $table = "profiles";
     public $primaryKey = "id";
     public $timestamps = true;
 

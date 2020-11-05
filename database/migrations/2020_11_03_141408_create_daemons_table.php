@@ -17,7 +17,6 @@ class CreateDaemonsTable extends Migration
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("description");
-            $table->
             $table->string("url");
             $table->string("port");
             $table->timestamps();

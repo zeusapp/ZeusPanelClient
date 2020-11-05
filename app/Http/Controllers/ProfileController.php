@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -13,7 +14,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile\index');
+        if(auth()->user()->profile == null) {
+            return redirect("profile/create");
+        }
+        return view('profile/index')->with("profile", auth()->user()->profile);
     }
 
     /**
@@ -23,7 +27,14 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->profile == null) {
+            $profile = new Profile();
+            $profile->user_id = auth()->user()->id;
+            $profile->save();
+            return redirect("/profile");
+        } else {
+            abort(401);
+        }
     }
 
     /**
@@ -68,7 +79,27 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = auth()->user();
+        $profile = $user->profile;
+
+        if($request->input("username") != null) {
+            $user->username = $request->input("username");
+        }
+        if($request->input("email") != null) {
+            $user->email = $request->input("email");
+        }
+
+        $profile->first_name = $request->input("first_name");
+        $profile->last_name = $request->input("last_name");
+        $profile->discord = $request->input("discord");
+        $profile->phone = $request->input("phone");
+        $profile->location = $request->input("location");
+        $profile->signature = $request->input("signature");
+
+        $user->save();
+        $profile->save();
+        return redirect("/profile")->with("success", "Updated your profile!");
+
     }
 
     /**
